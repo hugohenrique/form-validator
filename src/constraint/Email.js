@@ -1,6 +1,6 @@
 Validator.addConstraint(
   'email',
-  'is an email invalid',
+  'Isn\'t a valid email address',
   function () {
     var value = this.record[this.attribute] || '';
 
