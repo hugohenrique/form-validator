@@ -14,7 +14,7 @@ var Validator = (function () {
     var constructorName = name.replace(/[-_](.)/g, toUpperCase)
                               .replace(/^(.)/, toUpperCase);
 
-    return constructorName + 'Validator';
+    return constructorName + 'Constraint';
   };
 
   Validator.getConstructorFromName = function(name) {

@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Jasmine Spec Runner v2.1.3</title>
+  <head>
+    <meta charset="utf-8">
+    <title>Jasmine Spec Runner v2.1.3</title>
 
-  <link rel="shortcut icon" type="image/png" href="../vendor/jasmine/jasmine_favicon.png">
-  <link rel="stylesheet" href="../vendor/jasmine/jasmine.css">
+    <link rel="shortcut icon" type="image/png" href="../vendor/jasmine/jasmine_favicon.png">
+    <link rel="stylesheet" href="../vendor/jasmine/jasmine.css">
 
-  <script src="../vendor/jasmine/jasmine.js"></script>
-  <script src="../vendor/jasmine/jasmine-html.js"></script>
-  <script src="../vendor/jasmine/boot.js"></script>
+    <script src="../vendor/jasmine/jasmine.js"></script>
+    <script src="../vendor/jasmine/jasmine-html.js"></script>
+    <script src="../vendor/jasmine/boot.js"></script>
 
-  <!-- include source files here... -->
-  <script src="../vendor/jquery/jquery.js"></script>
-  <script src="../src/Validator.js"></script>
-  <script src="../src/Errors.js"></script>
-  <script src="../src/AddConstraint.js"></script>
-  <script src="../src/Form.js"></script>
-  <script src="../src/InlineErrorRenderer.js"></script>
-  <script src="../src/ListRenderer.js"></script>
-  <script src="../src/ContainerRenderer.js"></script>
-  <script src="../src/constraints/Email.js"></script>
-  <script src="../src/constraints/Equal.js"></script>
-  <script src="../src/constraints/Format.js"></script>
-  <script src="../src/constraints/Length.js"></script>
-  <script src="../src/constraints/NotBlank.js"></script>
+    <!-- include source files here... -->
+    <script src="../vendor/jquery/jquery.js"></script>
+    <script src="../src/Validator.js"></script>
+    <script src="../src/Errors.js"></script>
+    <script src="../src/AddConstraint.js"></script>
+    <script src="../src/Form.js"></script>
+    <script src="../src/renderer/InlineErrorRenderer.js"></script>
+    <script src="../src/renderer/ListRenderer.js"></script>
+    <script src="../src/renderer/ContainerRenderer.js"></script>
+    <script src="../src/constraint/Email.js"></script>
+    <script src="../src/constraint/Equal.js"></script>
+    <script src="../src/constraint/Format.js"></script>
+    <script src="../src/constraint/Length.js"></script>
+    <script src="../src/constraint/NotBlank.js"></script>
 
-  <!-- include spec files here... -->
-  <script src="SpecHelper.js"></script>
-  <script src="ValidatorSpec.js"></script>
+    <!-- include spec files here... -->
+    <script src="ValidatorSpec.js"></script>
+    <script src="FormSpec.js"></script>
+    <script src="ErrorsSpec.js"></script>
+    <script src="constraint/NotBlankConstraintSpec.js"></script>
+    <script src="constraint/FormatConstraintSpec.js"></script>
+    <script src="constraint/LengthConstraintSpec.js"></script>
+    <script src="constraint/EqualConstraintSpec.js"></script>
+    <script src="renderer/InlineMessageRenderSpec.js"></script>
+    <script src="renderer/ListRendererSpec.js"></script>
+  </head>
 
-</head>
+  <body>
 
-<body>
-</body>
+  </body>
 </html>

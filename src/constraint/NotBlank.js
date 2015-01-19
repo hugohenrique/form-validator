@@ -1,6 +1,6 @@
 Validator.addConstraint(
   'notBlank',
-  'cant be blank',
+  'Should not be blank',
   function () {
     var value = this.record[this.attribute];
 

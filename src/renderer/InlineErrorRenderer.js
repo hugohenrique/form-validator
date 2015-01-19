@@ -17,7 +17,6 @@ Validator.InlineErrorRenderer = (function () {
     validator.form.find(".error").remove();
   };
 
-  // Private
   InlineErrorRenderer.prototype.renderError = function(validator, name, errors) {
     var error = $("<span>").addClass("error").text(errors[0]);
 

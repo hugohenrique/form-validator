@@ -7,14 +7,14 @@ module.exports = function(grunt) {
       'src/Errors.js',
       'src/AddConstraint.js',
       'src/Form.js',
-      'src/InlineErrorRenderer.js',
-      'src/ListRenderer.js',
-      'src/ContainerRenderer.js',
-      'src/constraints/Email.js',
-      'src/constraints/Equal.js',
-      'src/constraints/Format.js',
-      'src/constraints/Length.js',
-      'src/constraints/NotBlank.js'
+      'src/renderer/InlineErrorRenderer.js',
+      'src/renderer/ListRenderer.js',
+      'src/renderer/ContainerRenderer.js',
+      'src/constraint/Email.js',
+      'src/constraint/Equal.js',
+      'src/constraint/Format.js',
+      'src/constraint/Length.js',
+      'src/constraint/NotBlank.js'
     ]
   };
 
