@@ -1,0 +1,6 @@
+{
+  "name": "form-validator",
+  "dependencies": {
+    "jquery": "~2.0"
+  }
+}

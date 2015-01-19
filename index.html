@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script src="vendor/jquery/jquery.js"></script>
+  </head>
+  <body>
+    <form action="/" method="post" novalidate>
+      <label>
+        Nome: <input type="text" name="name" id="name" required>
+      </label>
+      <label>
+        Email: <input type="email" name="email" id="email" required>
+      </label>
+      <label>
+        Senha: <input type="password" name="password" id="password" required>
+        Confirme sua senha: <input type="password" name="password_equal" id="password_equal" required>
+      </label>
+
+      <button type="submit">Logar</button>
+    </form>
+
+    <script type="text/javascript" src="dist/form-validator.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        var form = $("form");
+
+        var renderers = [
+          new Validator.InlineErrorRenderer(),
+          new Validator.ListRenderer("Please double check your data before continuing:"),
+          new Validator.ContainerRenderer()
+        ];
+
+        var validator = new Validator.Form(form, renderers);
+        validator.validate("notBlank", "#name", {message: "Name is required"});
+        validator.validate("email", "#email", {message: "E-mail is invalid"});
+        validator.validate("notBlank", "#password", {message: "Password is required"});
+        validator.validate("length", "#password", {message: {min: "Password must have at least 8 characters"}, min: 8});
+        validator.validate("equal", "#password", {message: "Password must be equal to the confirmation"});
+
+        form.on("submit", function (event) {
+          event.preventDefault();
+
+          if (validator.isValid()) {
+            alert("Your form data is valid!\nNot submitting the form for practical reasons.");
+            // this.submit();
+          }
+        });
+      });
+    </script>
+
+  </body>
+</html>
