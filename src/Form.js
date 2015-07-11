@@ -46,6 +46,16 @@ Validator.Form = (function(){
 
     return formData.reduce(
       function (record, field) {
+        if (record[field.name]) {
+          if (typeof record[field.name] === 'string') {
+            record[field.name] = [record[field.name]];
+          }
+
+          record[field.name].push(field.value);
+
+          return record;
+        }
+
         record[field.name] = field.value;
 
         return record;

@@ -17,6 +17,14 @@
         Confirme sua senha: <input type="password" name="password_equal" id="password_equal" required>
       </label>
 
+      <br>
+
+      <label>
+        Field 1 <input type="input" name="fields"> <br>
+        Field 2 <input type="input" name="fields"> <br>
+        Field 3 <input type="input" name="fields"> <br>
+      </label>
+
       <button type="submit">Logar</button>
     </form>
 
@@ -39,6 +47,8 @@
 
         form.on("submit", function (event) {
           event.preventDefault();
+
+          console.log(validator.record());
 
           if (validator.isValid()) {
             alert("Your form data is valid!\nNot submitting the form for practical reasons.");
