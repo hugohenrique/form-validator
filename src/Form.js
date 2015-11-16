@@ -1,4 +1,4 @@
-Validator.Form = (function(){
+Validator.Form = (function () {
   var caller = function(functionName, context, args) {
     return function(item) {
       return item[functionName].apply(context || item, args);
@@ -18,6 +18,8 @@ Validator.Form = (function(){
       this.form.find(field).attr('name'),
       options
     );
+
+    return this;
   };
 
   Form.prototype.clean = function() {
