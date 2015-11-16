@@ -9,12 +9,17 @@
       <label>
         Nome: <input type="text" name="name" id="name" required>
       </label>
+      <br>
       <label>
-        Email: <input type="email" name="email" id="email" required>
+        Email: <input type="email" name="email[first]" id="email_first" required>
       </label>
+      <br>
+      <label>
+        Confirme o email: <input type="email" name="email[second]" id="email_second" required>
+      </label>
+      <br>
       <label>
         Senha: <input type="password" name="password" id="password" required>
-        Confirme sua senha: <input type="password" name="password_equal" id="password_equal" required>
       </label>
 
       <br>
@@ -39,16 +44,31 @@
         ];
 
         var validator = new Validator.Form(form, renderers);
-        validator.validate("notBlank", "#name", {message: "Name is required"});
-        validator.validate("email", "#email", {message: "E-mail is invalid"});
-        validator.validate("notBlank", "#password", {message: "Password is required"});
-        validator.validate("length", "#password", {message: {min: "Password must have at least 8 characters"}, min: 8});
-        validator.validate("equal", "#password", {message: "Password must be equal to the confirmation"});
+
+        validator.validate("notBlank", "#name",  {message: "Name is required"})
+                 .validate("email", "#email_first", {message: "E-mail is invalid"})
+                 .validate("notBlank", "#password", {message: "Password is required"});
+
+        validator.validate(
+          "length",
+          "#password",
+          {
+            message: {min: "Password must have at least 8 characters"},
+            min: 8
+          }
+        );
+
+        validator.validate(
+          "equal",
+          "#email_second",
+          {
+            message: "Email must be equal to the confirmation",
+            equal: "email[first]",
+          }
+        );
 
         form.on("submit", function (event) {
           event.preventDefault();
-
-          console.log(validator.record());
 
           if (validator.isValid()) {
             alert("Your form data is valid!\nNot submitting the form for practical reasons.");

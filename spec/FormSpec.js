@@ -1,9 +1,9 @@
-describe('Validator.Form', function() {
+describe('Validator.Form', function () {
   var form, input, validator;
 
   beforeEach(function() {
     form = $('<form/>');
-    input = $('<input name="name"/>').appendTo(form);
+    input = $('<input name="name">').appendTo(form);
 
     validator = new Validator.Form(form);
     validator.validate('notBlank', ':text', { message: 'is required' });
@@ -20,17 +20,23 @@ describe('Validator.Form', function() {
   });
 
   describe('when there is multiple fields with equals name', function () {
-
-    beforeEach(function() {
+    beforeEach(function () {
       form = $('<form/>');
-      var input1 = $('<input name="name" value="input1" />').appendTo(form);
-      var input2 = $('<input name="name" value="input2" />').appendTo(form);
-
       validator = new Validator.Form(form);
     });
 
-    it('Validator.record', function () {
-      expect(validator.record()).toEqual({ name: ['input1', 'input2'] });
+    it('format singular name', function () {
+      $('<input name="name" value="input-1">').appendTo(form);
+      $('<input name="name" value="input-2">').appendTo(form);
+
+      expect(validator.record()).toEqual({name: ['input-1', 'input-2']});
+    });
+
+    it('format array name', function () {
+      $('<input name="name[]" value="input-1">').appendTo(form);
+      $('<input name="name[]" value="input-2">').appendTo(form);
+
+      expect(validator.record()).toEqual({'name[]': ['input-1', 'input-2']});
     });
   });
 });
