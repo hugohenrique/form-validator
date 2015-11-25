@@ -12,11 +12,17 @@ Validator.Form = (function () {
     this.errors = this.validator.errors;
   }
 
-  Form.prototype.validate = function(type, field, options) {
-    this.validator.validate(
-      type,
-      this.form.find(field).attr('name'),
-      options
+  Form.prototype.validate = function(type, selector, options) {
+    var fieldMap = this.form.find(selector);
+
+    if (!fieldMap.length) {
+      throw 'This field `'+ selector +'` was not found.');
+    }
+
+    fieldMap.each(
+      function (key, field) {
+        this.validator.validate(type, field.getAttribute('name'), options);
+      }.bind(this)
     );
 
     return this;
