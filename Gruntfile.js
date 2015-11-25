@@ -3,18 +3,21 @@ module.exports = function(grunt) {
 
   var assets = {
     source: [
-      'src/Validator.js',
-      'src/Errors.js',
-      'src/AddConstraint.js',
-      'src/Form.js',
-      'src/renderer/InlineErrorRenderer.js',
-      'src/renderer/ListRenderer.js',
-      'src/renderer/ContainerRenderer.js',
-      'src/constraint/Email.js',
-      'src/constraint/Equal.js',
-      'src/constraint/Format.js',
-      'src/constraint/Length.js',
-      'src/constraint/NotBlank.js'
+      'src/validator.js',
+      'src/errors.js',
+      'src/addConstraint.js',
+      'src/form.js',
+      'src/renderer/inlineErrorRenderer.js',
+      'src/renderer/listRenderer.js',
+      'src/renderer/containerRenderer.js',
+      'src/constraint/contains.js',
+      'src/constraint/date.js',
+      'src/constraint/equal.js',
+      'src/constraint/email.js',
+      'src/constraint/format.js',
+      'src/constraint/time.js',
+      'src/constraint/length.js',
+      'src/constraint/notBlank.js'
     ]
   };
 
@@ -55,3 +58,4 @@ module.exports = function(grunt) {
   grunt.registerTask('development', ['concat', 'watch']);
   grunt.registerTask('production', ['uglify:production']);
 };
+
