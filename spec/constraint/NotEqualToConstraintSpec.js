@@ -8,11 +8,11 @@ describe('Validator.NotEqualToConstraint', function () {
   });
 
   it('return default error message', function () {
-    record.name = 'notShouldEqual';
+    record.name = '0123456789';
 
     validator.isValid();
 
-    expect(validator.errorMessage()).toEqual('This value should not be equal to "' + record.name + '"');
+    expect(validator.errorMessage()).toEqual('This value should not be equal to "' + options.compare + '"');
   });
 
   it('allow customize the error message', function () {
@@ -21,7 +21,7 @@ describe('Validator.NotEqualToConstraint', function () {
 
     validator.isValid();
 
-    expect(validator.errorMessage()).toEqual('Value are not equals with "' + record.name + '"');
+    expect(validator.errorMessage()).toEqual('Value are not equals with "' + options.compare + '"');
   });
 
   it('accept values when they\'re not identical', function () {

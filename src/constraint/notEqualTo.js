@@ -9,7 +9,7 @@ Validator.addConstraint(
       message = this.options.message;
     }
 
-    this.options.message = message.replace('%s', value);
+    this.options.message = message.replace('%s', this.options.compare);
 
     return value && value != this.options.compare;
   }
