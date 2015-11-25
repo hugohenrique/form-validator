@@ -1,5 +1,5 @@
 Validator.addConstraint(
-  'Date',
+  'date',
   'Please enter a valid date',
   function () {
     var value = this.record[this.attribute];

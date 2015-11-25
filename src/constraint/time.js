@@ -1,5 +1,5 @@
 Validator.addConstraint(
-  'Time',
+  'time',
   'Please enter a valid time, between 00:00 and 23:59',
   function () {
     var value = this.record[this.attribute];

@@ -1,5 +1,5 @@
 Validator.addConstraint(
-  'Contains',
+  'contains',
   'The value not be found',
   function () {
     var value = this.record[this.attribute];
