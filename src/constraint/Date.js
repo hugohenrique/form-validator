@@ -19,7 +19,7 @@ Validator.addConstraint(
       format = formats[this.options.format];
     }
 
-		return format.test(value);
+    return format.test(value);
   }
 );
 
