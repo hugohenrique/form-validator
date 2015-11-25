@@ -273,7 +273,7 @@ Validator.ContainerRenderer = (function () {
   return ContainerRenderer;
 })();
 Validator.addConstraint(
-  'Contains',
+  'contains',
   'The value not be found',
   function () {
     var value = this.record[this.attribute];
@@ -293,7 +293,7 @@ Validator.addConstraint(
   }
 );
 Validator.addConstraint(
-  'Date',
+  'date',
   'Please enter a valid date',
   function () {
     var value = this.record[this.attribute];
@@ -334,6 +334,23 @@ Validator.addConstraint(
 );
 
 Validator.addConstraint(
+  'notEqualTo',
+  'This value should not be equal to "%s"',
+  function () {
+    var value = this.record[this.attribute];
+    var message = this.defaultMessage;
+
+    if (this.options.message) {
+      message = this.options.message;
+    }
+
+    this.options.message = message.replace('%s', value);
+
+    return value && value != this.options.compare;
+  }
+);
+
+Validator.addConstraint(
   'email',
   'Isn\'t a valid email address',
   function () {
@@ -356,7 +373,7 @@ Validator.addConstraint(
   }
 );
 Validator.addConstraint(
-  'Time',
+  'time',
   'Please enter a valid time, between 00:00 and 23:59',
   function () {
     var value = this.record[this.attribute];

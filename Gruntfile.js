@@ -13,6 +13,7 @@ module.exports = function(grunt) {
       'src/constraint/contains.js',
       'src/constraint/date.js',
       'src/constraint/equal.js',
+      'src/constraint/notEqualTo.js',
       'src/constraint/email.js',
       'src/constraint/format.js',
       'src/constraint/time.js',
