@@ -16,7 +16,7 @@ Validator.Form = (function () {
     var fieldMap = this.form.find(selector);
 
     if (!fieldMap.length) {
-      throw 'This field `'+ selector +'` was not found.');
+      throw 'This field `'+ selector +'` was not found.';
     }
 
     fieldMap.each(
