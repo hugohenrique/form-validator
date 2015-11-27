@@ -4,6 +4,6 @@ Validator.addConstraint(
   function () {
     var value = this.record[this.attribute];
 
-    return !!value && !!value.replace(/\s/mg, '');
+    return !!value && String(value).replace(/\s/mg, '');
   }
 );
