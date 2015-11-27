@@ -273,6 +273,16 @@ Validator.ContainerRenderer = (function () {
   return ContainerRenderer;
 })();
 Validator.addConstraint(
+  'callback',
+  'Callback invalid',
+  function () {
+    var value = this.record[this.attribute];
+
+    return this.options.callback.call(this, value);
+  }
+);
+
+Validator.addConstraint(
   'contains',
   'The value not be found',
   function () {
@@ -344,7 +354,7 @@ Validator.addConstraint(
       message = this.options.message;
     }
 
-    this.options.message = message.replace('%s', value);
+    this.options.message = message.replace('%s', this.options.compare);
 
     return value && value != this.options.compare;
   }
@@ -417,6 +427,6 @@ Validator.addConstraint(
   function () {
     var value = this.record[this.attribute];
 
-    return !!value && !!value.replace(/\s/mg, '');
+    return !!value && String(value).replace(/\s/mg, '');
   }
 );

@@ -10,6 +10,7 @@ module.exports = function(grunt) {
       'src/renderer/inlineErrorRenderer.js',
       'src/renderer/listRenderer.js',
       'src/renderer/containerRenderer.js',
+      'src/constraint/callback.js',
       'src/constraint/contains.js',
       'src/constraint/date.js',
       'src/constraint/equal.js',
