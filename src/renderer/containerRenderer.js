@@ -7,7 +7,7 @@ Validator.ContainerRenderer = (function () {
     var errors = validator.errors.all();
 
     for (var name in errors) {
-      validator.form.find('input[name="' + name + '"]').parent().addClass('with-error');
+      validator.form.find('[name="' + name + '"]').parent().addClass('with-error');
     }
   };
 
